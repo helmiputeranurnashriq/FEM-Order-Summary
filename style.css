@@ -1,0 +1,241 @@
+:root {
+
+    --clr-primary-200: hsl(225, 100%, 94%);
+    --clr-primary-250: hsl(245, 83%, 68%);
+    --clr-primary-300: hsl(245, 75%, 52%);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(225, 100%, 98%);
+    --clr-neutral-400: hsl(224, 23%, 55%);
+    --clr-neutral-800: hsl(223, 47%, 23%);
+
+    --ff-serif: "Red Hat Display", sans-serif;;
+
+    --fs-400: 1rem;
+
+    --fw-500: 500;
+    --fw-700: 700;
+    --fw-900: 900;
+
+}
+
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+
+body {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-500);
+    color: var(--clr-neutral-400);
+    background-color: var(--clr-primary-200);
+    background-image: url("./images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size:contain;
+
+    line-height: 1.6;
+    display:grid;
+    min-height: 100vh;
+    place-items: center;
+  }
+
+h1 {
+    color: var(--clr-neutral-800);
+    font-size: 1.75rem;
+}
+
+button {
+    cursor: pointer;
+    text-decoration: 0;
+    border: 0;
+    font-weight: var(--fw-700);
+    border-radius: 0.5rem;
+    padding: 1em 2em;
+}
+
+
+/* Composition/Layout */
+.grid-flow {
+    display: grid;
+    gap: 1rem;
+}
+
+.flex-flow {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Utilities Class */
+.padding-24 {
+    padding: 1.5rem;
+}
+
+.padding-48 {
+    padding: 3rem;
+}
+
+.text-neutral-dark {
+    color: var(--clr-neutral-800)
+}
+
+.text-neutral-mid {
+    color:var(--clr-neutral-400);
+}
+
+.bg-neutral-light{
+    background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-mid {
+    background-color: var(--clr-neutral-200);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: start;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.m-left {
+  margin-left:auto;
+  align-content: center;
+}
+
+.text-dark {
+  color: var(--clr-neutral-800) ;
+  font-weight: var(--fw-900);
+}
+
+
+a, 
+.link {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  color: var(--clr-primary-300);
+  text-decoration: underline;
+  font-weight: var(--fw-700);
+}
+
+
+a:hover,
+a:focus,
+.link:hover,
+.link:focus {
+  text-decoration: none;
+  color: var(--clr-primary-250);
+}
+
+/* Block */
+
+
+button[data-type = "primary"] {
+  color:var(--clr-neutral-100);
+  background-color: var(--clr-primary-300);
+  box-shadow: ;
+}
+
+button[data-type = "naked"] {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-400);
+}
+
+button[data-type = "primary"]:hover,
+button[data-type = "primary"]:focus {
+  background-color: var(--clr-primary-250);
+}
+
+button[data-type = "naked"]:hover,
+button[data-type = "naked"]:focus {
+  color: var(--clr-neutral-800);
+}
+
+
+.card {
+    max-width: 450px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
